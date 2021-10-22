@@ -2,8 +2,12 @@ package Conversao;
 
 import java.util.Scanner;
 
+import gestaoLog.GerenciadorLog;
+
 public class ExemploConversor {
     public static void main(String[] args) {
+        GerenciadorLog.getInstancia().ativar();
+
         ConversorMetroParaCentimetro cm = new ConversorMetroParaCentimetro();
         ConversorMetroParaMilha milha = new ConversorMetroParaMilha();
         ConversorMetroParaPes pes = new ConversorMetroParaPes();
@@ -34,6 +38,8 @@ public class ExemploConversor {
 
         }
         scan.close();
+        GerenciadorLog.getInstancia().adicionarMensagemLog("Calculos Realizados - ");
+
         
     }
 }
